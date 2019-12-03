@@ -4,6 +4,8 @@ This template allows you to deploy a Linux VM that supports sending security eve
 - [Use Linux Diagnostic Extension to monitor metrics and logs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/diagnostics-linux)
 - [VM Security Log to Event Hub for SIEM integration](https://azsec.azurewebsites.net/2019/12/03/vm-security-log-to-event-hub-for-siem-integration/)
 
+> This is a sample template to showcase Event Hub integration. All secrets in the template should be protected in Key Vault if you go production.
+
 If you are new to Azure virtual machines, see:
 
 - [Azure Virtual Machines](https://azure.microsoft.com/services/virtual-machines/).
