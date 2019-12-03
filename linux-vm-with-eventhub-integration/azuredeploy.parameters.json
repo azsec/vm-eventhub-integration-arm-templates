@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmName": {
+            "value": "azsec-linux"
+        },
+        "adminUsername": {
+            "value": "azsec"
+        },
+        "adminPassword": {
+            "value": "YOUR_PASSWORD"
+        },
+        "subnetId": {
+            "value": "/subscriptions/67d6179d-a99d-4ccd-8c56-4d3ff2e13349/resourceGroups/azsec-corporate-rg/providers/Microsoft.Network/virtualNetworks/azsec-corporate-vnet/subnets/azsec-services-subnet"
+        },
+        "linuxEventHubSasUrl": {
+            "value": "YOUR_SASURL"
+        },
+        "configStorageAccountName":{
+            "value": "cfgstreventhub"
+        },
+        "configStorageAccountSas": {
+            "value": "YOUR_STORAGESASTOKEN"
+        }
+    }
+}
