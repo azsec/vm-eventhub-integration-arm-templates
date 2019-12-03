@@ -1,7 +1,7 @@
 # Simple deployment of Windows VM that supports sending security event to Event Hub
 
-This template allows you to deploy a Windows VM that supports sending security event to Event Hub so you can connect your SIEM to that Event Hub. or more details on specific configuration, refer to the following references:
-- [Streaming Azure Diagnostics data in the hot path by using Event Hubs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/diagnostics-extension-stream-event-hubs)
+This template allows you to deploy a Linux VM that supports sending security event to Event Hub so you can connect your SIEM to that Event Hub. For more details on specific configuration, refer to the following references:
+- [Use Linux Diagnostic Extension to monitor metrics and logs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/diagnostics-linux)
 - [VM Security Log to Event Hub for SIEM integration](https://azsec.azurewebsites.net/2019/12/03/vm-security-log-to-event-hub-for-siem-integration/)
 
 If you are new to Azure virtual machines, see:
