@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmName": {
+            "value": "azsec-windows"
+        },
+        "adminUsername": {
+            "value": "azsec"
+        },
+        "adminPassword": {
+            "value": "YOUR_PASSWORD"
+        },
+        "subnetId": {
+            "value": "/subscriptions/67d6179d-a99d-4ccd-8c56-4d3ff2e13349/resourceGroups/azsec-corporate-rg/providers/Microsoft.Network/virtualNetworks/azsec-corporate-vnet/subnets/azsec-services-subnet"
+        },
+        "windowsEventHubUrl": {
+            "value": "https://azsec-eventhub-siem.servicebus.windows.net/windows_vm"
+        },
+        "windowsEventHubAuthorizationRuleName": {
+            "value": "windows-policy"
+        },
+        "windowsEventHubAuthorizationRuleNameAccessKey": {
+            "value": "YOUR_EVENTHUBSHAREDKEY"
+        },
+        "configStorageAccountName": {
+            "value": "cfgstreventhub"
+        },
+        "configStorageAccountKey": {
+            "value": "YOUR_STORAGEACCESSKEY"
+        }
+    }
+}
