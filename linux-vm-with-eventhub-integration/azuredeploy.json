@@ -35,7 +35,7 @@
                 "7.5"
             ],
             "metadata": {
-                "description": "The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version."
+                "description": "The CentOs version for the VM"
             }
         },
         "vmSize": {
