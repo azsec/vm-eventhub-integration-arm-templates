@@ -9,45 +9,37 @@ $linuxAuthorizationRuleName = "linux-policy"
 
 
 # Create Event Hub Namespace
-New-AzureRmEventHubNamespace -ResourceGroupName $resourceGroupName `
-                              -NamespaceName $eventHubNameSpaceName `
-                              -SkuName "Standard"
-                              -Location $location
+New-AzEventHubNamespace -ResourceGroupName $resourceGroupName -NamespaceName $eventHubNameSpaceName -SkuName "Basic" -Location $location
 
 # Create Windows Event Hub                             
-New-AzureRmEventHub -ResourceGroupName $resourceGroupName `
-                    -NamespaceName $eventHubNameSpaceName 
-                    -EventHubName $windowsEventHubName `
-                    -MessageRetentionInDays 3
+New-AzEventHub -ResourceGroupName $resourceGroupName -NamespaceName $eventHubNameSpaceName -Name $windowsEventHubName -MessageRetentionInDays 1
 
 # Create Linux Event Hub                             
-New-AzureRmEventHub -ResourceGroupName $resourceGroupName `
-                    -NamespaceName $eventHubNameSpaceName 
-                    -EventHubName $linuxEventHubName `
-                    -MessageRetentionInDays 3
+New-AzEventHub -ResourceGroupName $resourceGroupName -NamespaceName $eventHubNameSpaceName -Name $linuxEventHubName -MessageRetentionInDays 1
 
 # Create Windows Authorization Rule (Policy)
-New-AzureRmEventHubAuthorizationRule -ResourceGroupName $resourceGroupName `
+New-AzEventHubAuthorizationRule -ResourceGroupName $resourceGroupName `
                                      -NamespaceName $eventHubNameSpaceName `
                                      -EventHubName $windowsEventHubName `
                                      -AuthorizationRuleName $windowsAuthorizationRuleName `
                                      -Rights @("Listen","Send")
 
 # Create Linux Authorization Rule (Policy)
-New-AzureRmEventHubAuthorizationRule -ResourceGroupName $resourceGroupName `
+New-AzEventHubAuthorizationRule -ResourceGroupName $resourceGroupName `
                                      -NamespaceName $eventHubNameSpaceName `
                                      -EventHubName $linuxEventHubName `
                                      -AuthorizationRuleName $linuxAuthorizationRuleName `
                                      -Rights @("Listen","Send")
 
 # Get Windows Event Hub Shared Access Key
-Get-AzureRmEventHubKey -ResourceGroupName $resourceGroupName ` 
-                       -NamespaceName $eventHubNameSpaceName `
-                       -EventHubName $windowsEventHubName `
-                       -AuthorizationRuleName $windowsAuthorizationRuleName
 
-# Get Windows Event Hub Shared Access Key
-$linuxSharedAccessKey = Get-AzureRmEventHubKey -ResourceGroupName $resourceGroupName `
+Get-AzEventHubKey -ResourceGroupName $resourceGroupName  `
+                    -NamespaceName $eventHubNameSpaceName  `
+                    -EventHubName $windowsEventHubName `
+                    -AuthorizationRuleName $windowsAuthorizationRuleName
+
+# Get Linux Event Hub Shared Access Key
+$linuxSharedAccessKey = Get-AzEventHubKey -ResourceGroupName $resourceGroupName `
                        -NamespaceName $eventHubNameSpaceName `
                        -EventHubName $linuxEventHubName `
                        -AuthorizationRuleName $linuxAuthorizationRuleName
